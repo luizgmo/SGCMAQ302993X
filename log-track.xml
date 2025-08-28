@@ -2,4 +2,7 @@
     <exception class="class java.lang.Exception" date="Thu Aug 21 11:36:56 BRT 2025" message="teste">java.lang.Exception: teste
 	at aulas.xml.Teste.main(Teste.java:7)
 </exception>
+    <exception class="class java.lang.Exception" date="Thu Aug 28 08:19:00 BRT 2025" message="teste">java.lang.Exception: teste
+	at aulas.xml.Teste.main(Teste.java:7)
+</exception>
 </logs>
