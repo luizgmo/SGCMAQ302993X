@@ -1,0 +1,109 @@
+package model;
+
+import java.util.ArrayList;
+import model.framework.DataAccessObject;
+
+// classe que representa a entidade usuário e herda de dataaccessobject
+// implementa o padrão dao para persistência de dados na tabela 'usuarios'
+public class Usuario extends DataAccessObject {
+    // atributos mapeados para as colunas da tabela usuarios
+    private int id;
+    private String nome;
+    private String cpf;
+    private String senha;
+    // chave estrangeira para a tabela tipo_usuario
+    private int tipoUsuarioId;
+
+    // construtor padrão que define o nome da tabela no banco de dados
+    public Usuario() {
+        super("sgcm_db.usuarios");
+    }
+    
+    // métodos getters para acesso aos atributos
+    public int getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public int getTipoUsuarioId() {
+        return tipoUsuarioId;
+    }
+
+    // métodos setters que também registram as alterações (padrão unit of work)
+    public void setId(int id) {
+        this.id = id;
+        addChange("id", this.id);
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+        addChange("nome", this.nome);
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+        addChange("cpf", this.cpf);
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+        addChange("senha", this.senha);
+    }
+
+    public void setTipoUsuarioId(int tipoUsuarioId) {
+        this.tipoUsuarioId = tipoUsuarioId;
+        addChange("tipo_usuario_id", this.tipoUsuarioId);
+    }
+    
+    // implementação do método abstrato para definir a cláusula where
+    @Override
+    protected String getWhereClauseForOneEntity() {
+        return " id = " + getId();
+    }
+
+    // implementação do método abstrato para preencher o objeto com dados do resultset
+    @Override
+    protected DataAccessObject fill(ArrayList<Object> data) {
+        // preenche os atributos na mesma ordem das colunas da tabela
+        id = (int) data.get(0);
+        nome = (String) data.get(1);
+        cpf = (String) data.get(2);
+        senha = (String) data.get(3);
+        tipoUsuarioId = (int) data.get(4);
+        return this;
+    }
+
+    // implementação do método abstrato para criar uma cópia do objeto
+    @Override
+    protected Usuario copy() {
+        Usuario copia = new Usuario();
+        
+        // copia todos os atributos para o novo objeto
+        copia.setId(getId());
+        copia.setNome(getNome());
+        copia.setCpf(getCpf());
+        copia.setSenha(getSenha());
+        copia.setTipoUsuarioId(getTipoUsuarioId());
+        
+        // marca a cópia como não sendo uma nova entidade
+        copia.setNovelEntity(false);
+        
+        return copia;
+    }
+    
+    @Override
+    public String toString() {
+        return "(" + getId() + ", " + getNome() + ", " + getCpf() + ", " + getSenha() + ", " + getTipoUsuarioId() + ")";
+    }
+}
