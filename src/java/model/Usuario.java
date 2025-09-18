@@ -6,6 +6,7 @@ import model.framework.DataAccessObject;
 // classe que representa a entidade usuário e herda de dataaccessobject
 // implementa o padrão dao para persistência de dados na tabela 'usuarios'
 public class Usuario extends DataAccessObject {
+
     // atributos mapeados para as colunas da tabela usuarios
     private int id;
     private String nome;
@@ -16,9 +17,9 @@ public class Usuario extends DataAccessObject {
 
     // construtor padrão que define o nome da tabela no banco de dados
     public Usuario() {
-        super("sgcm_db.usuarios");
+        super("usuarios");
     }
-    
+
     // métodos getters para acesso aos atributos
     public int getId() {
         return id;
@@ -65,7 +66,7 @@ public class Usuario extends DataAccessObject {
         this.tipoUsuarioId = tipoUsuarioId;
         addChange("tipo_usuario_id", this.tipoUsuarioId);
     }
-    
+
     // implementação do método abstrato para definir a cláusula where
     @Override
     protected String getWhereClauseForOneEntity() {
@@ -88,20 +89,34 @@ public class Usuario extends DataAccessObject {
     @Override
     protected Usuario copy() {
         Usuario copia = new Usuario();
-        
+
         // copia todos os atributos para o novo objeto
         copia.setId(getId());
         copia.setNome(getNome());
         copia.setCpf(getCpf());
         copia.setSenha(getSenha());
         copia.setTipoUsuarioId(getTipoUsuarioId());
-        
+
         // marca a cópia como não sendo uma nova entidade
         copia.setNovelEntity(false);
-        
+
         return copia;
     }
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Usuario) {
+            Usuario aux = (Usuario) obj;
+            if (getId() == aux.getId()) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
     @Override
     public String toString() {
         return "(" + getId() + ", " + getNome() + ", " + getCpf() + ", " + getSenha() + ", " + getTipoUsuarioId() + ")";
