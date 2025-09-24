@@ -17,7 +17,7 @@ public class Ciclo extends HttpServlet {
         /*
         inicialização do servlet
         
-        leitura os parametros iniciais e criacao
+        leitura dos parâmetros inicais e criaçao variáveis globais comuns as requisições (como conexão a banco de dados)
         */
         super.init();
     }
