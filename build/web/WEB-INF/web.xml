@@ -6,6 +6,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>GetPost</servlet-name>
-        <url-pattern>/aula/servlet/getpost</url-pattern>
+        <url-pattern>/aulas/servlet/getpost</url-pattern>
     </servlet-mapping>
 </web-app>
