@@ -5,4 +5,19 @@
     <exception class="class java.lang.Exception" date="Thu Aug 28 08:19:00 BRT 2025" message="teste">java.lang.Exception: teste
 	at aulas.xml.Teste.main(Teste.java:7)
 </exception>
+    <exception class="class java.lang.IllegalArgumentException" date="Thu Sep 25 11:25:14 BRT 2025" message="InputStream cannot be null">java.lang.IllegalArgumentException: InputStream cannot be null
+	at java.xml/javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:118)
+	at controller.AppConfig.&lt;init&gt;(AppConfig.java:28)
+	at controller.AppConfig.getInstance(AppConfig.java:48)
+	at model.framework.DataAccessObject.insert(DataAccessObject.java:90)
+	at model.framework.DataAccessObject.save(DataAccessObject.java:155)
+	at model.__Exemplo.main(__Exemplo.java:17)
+</exception>
+    <exception class="class java.lang.IllegalArgumentException" date="Thu Sep 25 11:25:55 BRT 2025" message="InputStream cannot be null">java.lang.IllegalArgumentException: InputStream cannot be null
+	at java.xml/javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:118)
+	at controller.AppConfig.&lt;init&gt;(AppConfig.java:28)
+	at controller.AppConfig.getInstance(AppConfig.java:48)
+	at model.framework.DataAccessObject.getAllTableEntities(DataAccessObject.java:221)
+	at model.__Exemplo.main(__Exemplo.java:35)
+</exception>
 </logs>
