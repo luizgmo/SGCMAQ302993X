@@ -23,7 +23,7 @@
             }
         %>
         <h1>Tipo Usuário</h1>
-        <form action="<%= request.getContextPath()%>/home/tipousuario?action=<%= action%>" method="post">
+        <form action="<%= request.getContextPath()%>/home?action=<%= action%>&task=tipousuario" method="post">
 
             <label for="id">Id:</label>
             <input type="text" id="id" name="id" pattern="\d+" title="apenas digitos" value="<%= (tp != null) ? tp.getId() : "" %>" <%= (tp != null) ? "readonly" : "" %> required ><br/>

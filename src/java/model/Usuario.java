@@ -1,5 +1,7 @@
 package model;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
 import java.util.ArrayList;
 import model.framework.DataAccessObject;
 
@@ -57,9 +59,26 @@ public class Usuario extends DataAccessObject {
         addChange("cpf", this.cpf);
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
-        addChange("senha", this.senha);
+    public void setSenha(String senha) throws Exception {
+        if (senha == null) {
+            if (this.senha != null) {
+                this.senha = senha;
+                addChange("senha", this.senha);
+            }
+        } else {
+            if (senha.equals(this.senha) == false) {
+
+                String senhaSal = getId() + senha + getId() / 2;
+
+                MessageDigest md = MessageDigest.getInstance("SHA-256");
+
+                String hash = new BigInteger(1, md.digest(senhaSal.getBytes("UTF-8"))).toString(16);
+
+                this.senha = hash;
+                addChange("senha", this.senha);
+
+            }
+        }
     }
 
     public void setTipoUsuarioId(int tipoUsuarioId) {
@@ -94,7 +113,7 @@ public class Usuario extends DataAccessObject {
         copia.setId(getId());
         copia.setNome(getNome());
         copia.setCpf(getCpf());
-        copia.setSenha(getSenha());
+        copia.senha = (getSenha());
         copia.setTipoUsuarioId(getTipoUsuarioId());
 
         // marca a cópia como não sendo uma nova entidade

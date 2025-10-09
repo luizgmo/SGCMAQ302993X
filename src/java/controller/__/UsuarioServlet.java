@@ -1,4 +1,4 @@
-package controller;
+package controller.__;
 
 import java.io.IOException;
 import jakarta.servlet.ServletException;
@@ -29,7 +29,7 @@ public class UsuarioServlet extends HttpServlet {
             }
         }
 
-        response.sendRedirect(request.getContextPath() + "/home/usuarios.jsp");
+        response.sendRedirect(request.getContextPath() + "/home/app/usuarios.jsp");
     }
 
     @Override
@@ -62,6 +62,6 @@ public class UsuarioServlet extends HttpServlet {
             ExceptionLogTrack.getInstance().addLog(ex);
         }
         
-        response.sendRedirect(request.getContextPath() + "/home/usuarios.jsp");
+        response.sendRedirect(request.getContextPath() + "/home/app/usuarios.jsp");
     }
 }

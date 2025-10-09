@@ -26,12 +26,12 @@
                 <td><%= user.getNome() %></td>
                 <td><%= user.getCpf() %></td>
                 <td><%= user.getTipoUsuarioId() %></td>
-                <td><a href="<%= request.getContextPath() %>/home/usuarios_form.jsp?action=update&id=<%= user.getId() %>">Alterar</a></td>
-                <td><a href="<%= request.getContextPath() %>/home/usuarios?action=delete&id=<%= user.getId() %>" onclick="return confirm('Deseja realmente excluir Usuário <%= user.getId() %> (<%= user.getNome() %>) ?')" >Excluir</a></td>
+                <td><a href="<%= request.getContextPath() %>/home/app/usuarios_form.jsp?action=update&id=<%= user.getId() %>">Alterar</a></td>
+                <td><a href="<%= request.getContextPath() %>/home?action=delete&id=<%= user.getId() %>&task=usuarios" onclick="return confirm('Deseja realmente excluir Usuário <%= user.getId() %> (<%= user.getNome() %>) ?')" >Excluir</a></td>
             </tr>
             <% } %>
             
         </table>
-        <a href="<%= request.getContextPath() %>/home/usuarios_form.jsp?action=create" >Adicionar</a>
+        <a href="<%= request.getContextPath() %>/home/app/usuarios_form.jsp?action=create" >Adicionar</a>
     </body>
 </html>

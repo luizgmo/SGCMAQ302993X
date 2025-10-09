@@ -28,7 +28,7 @@
             ArrayList<TipoUsuario> tiposUsuario = new TipoUsuario().getAllTableEntities();
         %>
         <h1>Usuários</h1>
-        <form action="<%= request.getContextPath()%>/home/usuarios?action=<%= action%>" method="post">
+        <form action="<%= request.getContextPath()%>/home?action=<%= action%>&task=usuarios" method="post">
 
             <label for="id">Id:</label>
             <input type="text" id="id" name="id" pattern="\d+" title="apenas digitos" value="<%= (user != null) ? user.getId() : "" %>" <%= (user != null) ? "readonly" : "" %> required ><br/>
@@ -37,8 +37,8 @@
             <input type="text" id="nome" name="nome" value="<%= ((user != null) && (user.getNome() != null)) ? user.getNome() : "" %>" ><br/>
 
             <label for="cpf">CPF:</label>
-            <input type="text" id="cpf" name="cpf" value="<%= ((user != null) && (user.getCpf() != null)) ? user.getCpf() : "" %>" ><br/>
-
+            <input type="text" id="cpf" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Formato: 000.000.000-00" value="<%= ((user != null) && (user.getCpf() != null)) ? user.getCpf() : "" %>" ><br/>
+            
             <label for="senha">Senha:</label>
             <input type="password" id="senha" name="senha" value="<%= ((user != null) && (user.getSenha() != null)) ? user.getSenha() : "" %>" required><br/>
 

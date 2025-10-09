@@ -28,12 +28,12 @@
                 <td><%= tp.getModuloAdministrativo()%></td>
                 <td><%= tp.getModuloAgendamento()%></td>
                 <td><%= tp.getModuloAtendimento()%></td>
-                <td><a href="<%= request.getContextPath() %>/home/tipousuario_form.jsp?action=update&id=<%= tp.getId() %>">Alterar</a></td>
-                <td><a href="<%= request.getContextPath() %>/home/tipousuario?action=delete&id=<%= tp.getId() %>" onclick="return confirm('Deseja realmente excluir Tipo Usuário <%= tp.getId() %> (<%= tp.getNome() %>) ?')" >Excluir</a></td>
+                <td><a href="<%= request.getContextPath() %>/home/app/tipousuario_form.jsp?action=update&id=<%= tp.getId() %>">Alterar</a></td>
+                <td><a href="<%= request.getContextPath() %>/home?action=delete&id=<%= tp.getId() %>&task=tipousuario" onclick="return confirm('Deseja realmente excluir Tipo Usuário <%= tp.getId() %> (<%= tp.getNome() %>) ?')" >Excluir</a></td>
             </tr>
             <% } %>
             
         </table>
-        <a href="<%= request.getContextPath() %>/home/tipousuario_form.jsp?action=create" >Adicionar</a>
+        <a href="<%= request.getContextPath() %>/home/app/tipousuario_form.jsp?action=create" >Adicionar</a>
     </body>
 </html>
