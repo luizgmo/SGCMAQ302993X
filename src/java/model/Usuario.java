@@ -16,6 +16,7 @@ public class Usuario extends DataAccessObject {
     private String senha;
     // chave estrangeira para a tabela tipo_usuario
     private int tipoUsuarioId;
+    private String endereco;
 
     // construtor padrão que define o nome da tabela no banco de dados
     public Usuario() {
@@ -41,6 +42,10 @@ public class Usuario extends DataAccessObject {
 
     public int getTipoUsuarioId() {
         return tipoUsuarioId;
+    }
+    
+    public String getEndereco() {
+        return endereco;
     }
 
     // métodos setters que também registram as alterações (padrão unit of work)
@@ -85,6 +90,11 @@ public class Usuario extends DataAccessObject {
         this.tipoUsuarioId = tipoUsuarioId;
         addChange("tipo_usuario_id", this.tipoUsuarioId);
     }
+    
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+        addChange("endereco", this.endereco);
+    }
 
     // implementação do método abstrato para definir a cláusula where
     @Override
@@ -101,6 +111,7 @@ public class Usuario extends DataAccessObject {
         cpf = (String) data.get(2);
         senha = (String) data.get(3);
         tipoUsuarioId = (int) data.get(4);
+        endereco = (String) data.get(5);
         return this;
     }
 
@@ -115,6 +126,7 @@ public class Usuario extends DataAccessObject {
         copia.setCpf(getCpf());
         copia.senha = (getSenha());
         copia.setTipoUsuarioId(getTipoUsuarioId());
+        copia.setEndereco(getEndereco());
 
         // marca a cópia como não sendo uma nova entidade
         copia.setNovelEntity(false);
@@ -138,6 +150,6 @@ public class Usuario extends DataAccessObject {
 
     @Override
     public String toString() {
-        return "(" + getId() + ", " + getNome() + ", " + getCpf() + ", " + getSenha() + ", " + getTipoUsuarioId() + ")";
+        return "(" + getId() + ", " + getNome() + ", " + getCpf() + ", " + getSenha() + ", " + getTipoUsuarioId() + "," + getEndereco() + ")";
     }
 }

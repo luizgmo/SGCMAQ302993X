@@ -42,6 +42,13 @@
             
             <label for="senha">Senha:</label>
             <input type="password" id="senha" name="senha" value="<%= ((user != null) && (user.getSenha() != null)) ? user.getSenha() : "" %>" required><br/>
+      
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" name="cep" >
+            <input type="button" id="buscar_por_cep" name="buscar_por_endereco" pattern="\d{5}-\d{3}" value="Buscar Endereço" /> <br/>
+            
+            <label for="endereco">Endereço:</label>
+            <textarea type="text" id="endereco" rows="4" cols="50" name="endereco" ><%= ((user != null) && (user.getEndereco() != null)) ? user.getEndereco() : "" %></textarea><br/>
 
             <label for="tipo_usuario_id">Tipo Usuário:</label>
             <select id="tipo_usuario_id" name="tipo_usuario_id" required>

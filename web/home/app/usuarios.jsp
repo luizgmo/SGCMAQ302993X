@@ -17,6 +17,7 @@
                 <th>Nome</th>
                 <th>CPF</th>
                 <th>Tipo Usuário ID</th>
+                <th>Endereço</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -25,8 +26,9 @@
             <tr>
                 <td><%= user.getId() %></td>
                 <td><%= user.getNome() %></td>
-                <td><%= user.getCpf() %></td>
+                <td><%= user.getCpf() != null ? user.getCpf() : "-" %></td>
                 <td><%= user.getTipoUsuarioId() %></td>
+                <td><%= user.getEndereco() %></td>
                 <td><a href="<%= request.getContextPath() %>/home/app/usuarios_form.jsp?action=update&id=<%= user.getId() %>">Alterar</a></td>
                 <td><a href="<%= request.getContextPath() %>/home?action=delete&id=<%= user.getId() %>&task=usuarios" onclick="return confirm('Deseja realmente excluir Usuário <%= user.getId() %> (<%= user.getNome() %>) ?')" >Excluir</a></td>
             </tr>
