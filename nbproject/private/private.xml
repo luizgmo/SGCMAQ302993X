@@ -2,15 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/home/aluno/Documentos/SGCMAQ302993X/src/java/controller/FrontController.java</file>
-            <file>file:/home/aluno/Documentos/SGCMAQ302993X/src/java/controller/AutenticadorApp.java</file>
-            <file>file:/home/aluno/Documentos/SGCMAQ302993X/web/home/app/usuarios.jsp</file>
-            <file>file:/home/aluno/Documentos/SGCMAQ302993X/web/home/app/usuarios_form.jsp</file>
-            <file>file:/home/aluno/Documentos/SGCMAQ302993X/src/java/aulas/hash/CrackersList.java</file>
-            <file>file:/home/aluno/Documentos/SGCMAQ302993X/src/java/model/Usuario.java</file>
-            <file>file:/home/aluno/Documentos/SGCMAQ302993X/build/web/WEB-INF/web.xml</file>
-            <file>file:/home/aluno/Documentos/SGCMAQ302993X/web/home/login.jsp</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
