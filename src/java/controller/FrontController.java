@@ -78,7 +78,7 @@ public class FrontController extends HttpServlet {
             tp.delete();
         }
 
-        response.sendRedirect(request.getContextPath() + "/home/app/tipousuario.jsp");
+        response.sendRedirect(request.getContextPath() + "/home/app/adm/tipousuario.jsp");
     }
 
     private void doGetUsuarios(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -91,7 +91,7 @@ public class FrontController extends HttpServlet {
             user.delete();
         }
 
-        response.sendRedirect(request.getContextPath() + "/home/app/usuarios.jsp");
+        response.sendRedirect(request.getContextPath() + "/home/app/adm/usuarios.jsp");
     }
     
     private void doGetLogout(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -144,7 +144,7 @@ public class FrontController extends HttpServlet {
 
         tp.save();
 
-        response.sendRedirect(request.getContextPath() + "/home/app/tipousuario.jsp");
+        response.sendRedirect(request.getContextPath() + "/home/app/adm/tipousuario.jsp");
     }
 
     private void doPostUsuarios(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -172,7 +172,7 @@ public class FrontController extends HttpServlet {
 
         user.save();
 
-        response.sendRedirect(request.getContextPath() + "/home/app/usuarios.jsp");
+        response.sendRedirect(request.getContextPath() + "/home/app/adm/usuarios.jsp");
     }
     
     private void doPostLogin(HttpServletRequest request, HttpServletResponse response) throws Exception {

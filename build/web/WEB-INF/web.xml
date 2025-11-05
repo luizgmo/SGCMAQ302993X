@@ -17,6 +17,30 @@
         <filter-name>AutenticadorApp</filter-name>
         <url-pattern>/home/app/*</url-pattern>
     </filter-mapping>
+    <filter>
+        <filter-name>AutenticadorAdm</filter-name>
+        <filter-class>controller.AutenticadorAdm</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AutenticadorAdm</filter-name>
+        <url-pattern>/home/app/adm/*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>AutenticadorAgd</filter-name>
+        <filter-class>controller.AutenticadorAgd</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AutenticadorAgd</filter-name>
+        <url-pattern>/home/app/agd/*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>AutenticadorAtd</filter-name>
+        <filter-class>controller.AutenticadorAtd</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AutenticadorAtd</filter-name>
+        <url-pattern>/home/app/atd/*</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>GetPost</servlet-name>
         <servlet-class>aulas.servlet.getpost.GetPost</servlet-class>

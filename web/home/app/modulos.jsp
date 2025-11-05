@@ -14,8 +14,8 @@
     <li><a href="<%= request.getContextPath() %>/home/app/menu.jsp">Menu</a></li>
     
     <%if (tipoUsuarioLogado.getModuloAdministrativo().equals("S")) {%>
-        <li><a href="<%= request.getContextPath() %>/home/app/tipousuario.jsp">Tipo Usuário</a></li>
-        <li><a href="<%= request.getContextPath() %>/home/app/usuarios.jsp">Usuários</a></li>
+        <li><a href="<%= request.getContextPath() %>/home/app/adm/tipousuario.jsp">Tipo Usuário</a></li>
+        <li><a href="<%= request.getContextPath() %>/home/app/adm/usuarios.jsp">Usuários</a></li>
     <%}%>
     
     <li><a href="<%= request.getContextPath() %>/home?task=logout">Logout <%= usuarioLogado %> </a></li>
