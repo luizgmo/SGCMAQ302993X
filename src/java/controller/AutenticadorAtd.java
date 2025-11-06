@@ -23,7 +23,7 @@ public class AutenticadorAtd implements Filter {
 
         TipoUsuario tipoUsuario = (TipoUsuario) sessao.getAttribute("tipo_usuario");
 
-        if (tipoUsuario != null && tipoUsuario.getModuloAtendimento().equals("S")) {
+        if (tipoUsuario.getModuloAtendimento().equals("S")) {
             chain.doFilter(request, response);
         } else {
             httpServletRequest.setAttribute("msg", "Acesso negado. Você não tem permissão para acessar o módulo de atendimento.");

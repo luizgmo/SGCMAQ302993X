@@ -22,9 +22,12 @@ public class AutenticadorAdm implements Filter {
 
         TipoUsuario tipoUsuario = (TipoUsuario) sessao.getAttribute("tipo_usuario");
 
-        if (tipoUsuario != null && tipoUsuario.getModuloAdministrativo().equals("S")) {
+        if (tipoUsuario.getModuloAdministrativo().equals("S")) {
             chain.doFilter(request, response);
         } else {
+            // desse jeito nao envia mensagem de erro, apenas direciona
+            // httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + "/home/app/menu.jsp");
+            
             httpServletRequest.setAttribute("msg", "Acesso negado. Você não tem permissão para acessar o módulo administrativo.");
             httpServletRequest.getRequestDispatcher("/home/app/menu.jsp").forward(request, response);
         }
